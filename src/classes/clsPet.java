@@ -14,7 +14,7 @@ public class clsPet {
         }
 
         public void move(){
-            System.out.println("EL ANIMAL ESTA EN MOVIMIENTO");
+            System.out.println("EL ANIMAL ESTA MUERTOOOOOOO!!!");
         }
     
       
