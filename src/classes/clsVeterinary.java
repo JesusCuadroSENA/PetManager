@@ -8,7 +8,7 @@ public class clsVeterinary {
     private int phone;
     private String adress;
     private List<clsPet> clsPet;
-    private clsDoctor Doctor;
+    private clsDoctor clsDoctor;
     
     public void PetCare(){
         System.out.println("El veterinario esta cuidando a las mascotas");
@@ -19,7 +19,7 @@ public class clsVeterinary {
         this.phone = phone;
         this.adress = Adress;
         this.clsPet = clsPet;
-        this.Doctor = new clsDoctor(nameDoctor, licence);
+        this.clsDoctor = new clsDoctor(nameDoctor, licence);
     }
 
     public String getName() {
