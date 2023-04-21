@@ -5,25 +5,26 @@ public class clsPet {
     private int code;
     private String name;
     private int born_year;
-    private String breed;
     private String color;
     private String healthStatus;
+
+    public clsPet(int i, String chita, int i0, String negro, String saludable) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
         public void eat(){
             System.out.println("Comer");
         }
 
         public void move(){
-            System.out.println("EL ANIMAL ESTA MUERTOOOOOOO!!!");
+            System.out.println("EL ANIMAL ESTA UN MOVIMIENTO MUY LOCOCHON");
         }
     
-      
         
        public clsPet() {
         this.code = 0;
         this.name = "";
         this.born_year = 0;
-        this.breed = "";
         this.color = "";
         this.healthStatus = "";
         
@@ -33,7 +34,6 @@ public class clsPet {
         this.code = code;
         this.name = name;
         this.born_year = born_year;
-        this.breed = breed;
         this.color = color;
         this.healthStatus = healthStatus;
         
@@ -49,10 +49,6 @@ public class clsPet {
 
     public int getBorn_year() {
         return born_year;
-    }
-
-    public String getBreed() {
-        return breed;
     }
 
     public String getColor() {
@@ -73,10 +69,6 @@ public class clsPet {
 
     public void setBorn_year(int born_year) {
         this.born_year = born_year;
-    }
-
-    public void setBreed(String breed) {
-        this.breed = breed;
     }
 
     public void setColor(String color) {
