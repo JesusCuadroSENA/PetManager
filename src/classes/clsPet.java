@@ -73,17 +73,6 @@ public class clsPet {
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
-    
-    public void calcularMayor(int pet1,int pet2){
-        if(pet1<pet2){
-            System.out.println("La mascota 1 es mayor");
-        } else { 
-            if(pet1>pet2){
-                System.out.println("La mascota 2 es mayor");
-            } else {
-                System.out.println("Las mascotas tienen la misma edad");
-            }        
-        }
-    }
+   
 }
 
