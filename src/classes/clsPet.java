@@ -2,12 +2,11 @@
 package classes;
 
 public class clsPet {
-    private int code;
-    private String name;
-    private int born_year;
-    private String breed;
-    private String color;
-    private String healthStatus;
+    int code;
+    String name;
+    int born_year;
+    String color;
+    String healthStatus;
     
         public void eat(){
             System.out.println("Comer");
@@ -16,24 +15,20 @@ public class clsPet {
         public void move(){
             System.out.println("EL ANIMAL ESTA MUERTOOOOOOO!!!");
         }
-    
-      
-        
+  
        public clsPet() {
         this.code = 0;
         this.name = "";
         this.born_year = 0;
-        this.breed = "";
         this.color = "";
         this.healthStatus = "";
         
     }
 
-    public clsPet(int code, String name, int born_year, String breed, String color, String healthStatus) {
+    public clsPet(int code, String name, int born_year, String color, String healthStatus) {
         this.code = code;
         this.name = name;
         this.born_year = born_year;
-        this.breed = breed;
         this.color = color;
         this.healthStatus = healthStatus;
         
@@ -49,10 +44,6 @@ public class clsPet {
 
     public int getBorn_year() {
         return born_year;
-    }
-
-    public String getBreed() {
-        return breed;
     }
 
     public String getColor() {
@@ -73,10 +64,6 @@ public class clsPet {
 
     public void setBorn_year(int born_year) {
         this.born_year = born_year;
-    }
-
-    public void setBreed(String breed) {
-        this.breed = breed;
     }
 
     public void setColor(String color) {
