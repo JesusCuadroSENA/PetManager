@@ -5,54 +5,63 @@ import java.util.List;
 
 public class clsVeterinary {
     private String name;
-    private int phone;
+    private String phone;
     private String adress;
-    private List<clsPet> clsPet;
-    private clsDoctor clsDoctor;
-    
-    public void PetCare(){
-        System.out.println("El veterinario esta cuidando a las mascotas");
-    }
+    //private List<clsPet> clsPet;
+    private clsDoctor doctor;
 
-    public clsVeterinary(String name, int phone, String Adress, List<clsPet> clsPet, String nameDoctor, String licence) {
+    public clsVeterinary(String name, String phone, String adress, clsDoctor doctor) {
         this.name = name;
         this.phone = phone;
-        this.adress = Adress;
-        this.clsPet = clsPet;
-        this.clsDoctor = new clsDoctor(nameDoctor, licence);
+        this.adress = adress;
+        //this.clsPet = clsPet;
+        this.doctor = doctor;
+    }
+    
+    public String PetCare(clsPet pet){
+        System.out.println("Atendiendo a la mascota " + pet.getName());
+        return pet.getHealthStatus();
     }
 
     public String getName() {
         return name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
     public String getAdress() {
         return adress;
     }
-
+    /*
     public List<clsPet> getClsPet() {
-        return clsPet;
-    }
-
+    return clsPet;
+    }*/
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
     public void setAdress(String Adress) {
         this.adress = adress;
     }
-
+    /*
     public void setClsPet(List<clsPet> clsPet) {
-        this.clsPet = clsPet;
+    this.clsPet = clsPet;
+    }*/
+    public clsDoctor getDoctor() {
+        return doctor;
     }
+
+    public void setDoctor(clsDoctor doctor) {
+        this.doctor = doctor;
+    }
+    
+    
     
 }

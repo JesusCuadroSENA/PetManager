@@ -7,36 +7,38 @@ public class clsPet {
     private int born_year;
     private String color;
     private String healthStatus;
-
-    public clsPet(int i, String chita, int i0, String negro, String saludable) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-        public void eat(){
-            System.out.println("Comer");
-        }
-
-        public void move(){
-            System.out.println("EL ANIMAL ESTA UN MOVIMIENTO MUY LOCOCHON");
-        }
-    
-        
-       public clsPet() {
-        this.code = 0;
-        this.name = "";
-        this.born_year = 0;
-        this.color = "";
-        this.healthStatus = "";
+           
+    public clsPet() {  
         
     }
 
-    public clsPet(int code, String name, int born_year, String breed, String color, String healthStatus) {
+    public clsPet(int code, String name, int born_year, String color, String healthStatus) {
         this.code = code;
         this.name = name;
         this.born_year = born_year;
         this.color = color;
         this.healthStatus = healthStatus;
         
+    }
+    
+    public void Eat(){
+        System.out.println("El animal " + this.name + " esta alimentandose");
+    }
+
+    public void Move(){
+        System.out.println("El animal " + this.name + " esta moviendose");
+    }
+    
+    public void Sound(){
+        System.out.println("El animal " + this.name + " esta haciendo un ruido");
+    }
+    
+    public void WalkAround(){
+        System.out.println("El animal " + this.name + " esta dando una vuelta");
+    }
+    
+    public void SelfCleanning(){
+        System.out.println("El animal " + this.name + " se esta acicalando");
     }
 
     public int getCode() {
@@ -77,18 +79,6 @@ public class clsPet {
 
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
-    }
-    
-    public void calcularMayor(int pet1,int pet2){
-        if(pet1<pet2){
-            System.out.println("La mascota 1 es mayor");
-        } else { 
-            if(pet1>pet2){
-                System.out.println("La mascota 2 es mayor");
-            } else {
-                System.out.println("Las mascotas tienen la misma edad");
-            }        
-        }
     }
 }
 

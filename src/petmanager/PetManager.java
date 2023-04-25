@@ -15,8 +15,6 @@ public class PetManager {
         
         clsPet pet2 = new clsPet(2, "Chita", 2010, "Negro", "Saludable");
         
-        System.out.println("La mascota uno es: " + pet1);
-        System.out.println("La mascota dos es: " + pet2);
         
         if(pet1.getBorn_year()<pet2.getBorn_year()){
             System.out.println("La mascota 1 es mayor");

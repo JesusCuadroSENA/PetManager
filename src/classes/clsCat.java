@@ -2,10 +2,16 @@
 package classes;
 
 public class clsCat extends clsPet{
+    
     private String breed;
     
-    public void SelfCleaning(){
-        System.out.println("El gato se esta autolimpiando");
+    public clsCat() {
+        
+    }
+    
+    public clsCat(String breed,int code, String name, int born_year, String color, String healthStatus) {
+        super(code, name, born_year, color, healthStatus);
+        this.breed = breed;
     }
 
     public clsCat(String breed) {
@@ -17,14 +23,6 @@ public class clsCat extends clsPet{
     }
 
     public void setBreed(String breed) {
-        this.breed = breed;
-    }
-    
-    public clsCat() {
-    }
-
-    public clsCat(int code, String name, int born_year, String breed, String color, String healthStatus) {
-        super(code, name, born_year, breed, color, healthStatus);
         this.breed = breed;
     }
 }
