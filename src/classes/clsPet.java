@@ -2,6 +2,7 @@
 package classes;
 
 public class clsPet {
+
     private int code;
     private String name;
     private int born_year;
@@ -9,7 +10,11 @@ public class clsPet {
     private String healthStatus;
            
     public clsPet() {  
-        
+    int code;
+    String name;
+    int born_year;
+    String color;
+    String healthStatus;
     }
 
     public clsPet(int code, String name, int born_year, String color, String healthStatus) {
