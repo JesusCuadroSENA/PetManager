@@ -7,14 +7,12 @@ public class clsVeterinary {
     private String name;
     private String phone;
     private String adress;
-    //private List<clsPet> clsPet;
     private clsDoctor doctor;
 
     public clsVeterinary(String name, String phone, String adress, clsDoctor doctor) {
         this.name = name;
         this.phone = phone;
         this.adress = adress;
-        //this.clsPet = clsPet;
         this.doctor = doctor;
     }
     
@@ -34,10 +32,7 @@ public class clsVeterinary {
     public String getAdress() {
         return adress;
     }
-    /*
-    public List<clsPet> getClsPet() {
-    return clsPet;
-    }*/
+
 
     public void setName(String name) {
         this.name = name;
@@ -50,10 +45,7 @@ public class clsVeterinary {
     public void setAdress(String Adress) {
         this.adress = adress;
     }
-    /*
-    public void setClsPet(List<clsPet> clsPet) {
-    this.clsPet = clsPet;
-    }*/
+
     public clsDoctor getDoctor() {
         return doctor;
     }

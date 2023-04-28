@@ -4,7 +4,7 @@ package classes;
 public class clsPet {
 
     private int code;
-    private String name;
+    String name;
     private int born_year;
     private String color;
     private String healthStatus;
@@ -40,6 +40,18 @@ public class clsPet {
     
     public void WalkAround(){
         System.out.println("El animal " + this.name + " esta dando una vuelta");
+    }
+    
+    public void WalkAround(int km){
+        System.out.println(this.name + " ha caminado " + km + " kilometros");
+    }
+    
+    public void WalkAround(boolean dogLeash){
+        if(dogLeash){
+            System.out.println(this.name + " esta caminando con correa");
+        } else{
+            System.out.println(this.name + " esta caminando si correa");
+        }
     }
     
     public void SelfCleanning(){
