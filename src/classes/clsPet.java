@@ -1,7 +1,10 @@
 
 package classes;
 
-public class clsPet {
+import interfaces.animal;
+import interfaces.vertebrate;
+
+public class clsPet implements animal, vertebrate{
 
     private int code;
     String name;
@@ -10,11 +13,6 @@ public class clsPet {
     private String healthStatus;
            
     public clsPet() {  
-    int code;
-    String name;
-    int born_year;
-    String color;
-    String healthStatus;
     }
 
     public clsPet(int code, String name, int born_year, String color, String healthStatus) {
@@ -50,7 +48,7 @@ public class clsPet {
         if(dogLeash){
             System.out.println(this.name + " esta caminando con correa");
         } else{
-            System.out.println(this.name + " esta caminando si correa");
+            System.out.println(this.name + " esta caminando sin correa");
         }
     }
     
@@ -96,6 +94,16 @@ public class clsPet {
 
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
+    }
+    
+    @Override
+    public void getAnimalType(String Tipo) {
+        System.out.println(this.name+" es de tipo "+Tipo);
+    }
+
+    @Override
+    public void getNumberOfBones(int Bones) {
+        System.out.println(this.name+" tiene " + Bones + " huesos.");
     }
 }
 

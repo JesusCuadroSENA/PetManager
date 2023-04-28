@@ -24,7 +24,7 @@ public class PetManager {
             } else {
                 System.out.println("Las mascotas tienen la misma edad");
             }        
-        } 
+        }
     }
 }
    
