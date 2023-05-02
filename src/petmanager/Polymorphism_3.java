@@ -16,7 +16,7 @@ public class Polymorphism_3 {
         dog_3.WalkAround(25);
         dog_3.WalkAround(true);
         
-        dog_3.getAnimalType("Vertebrado");
-        dog_3.getNumberOfBones(54);
+        dog_3.getAnimalType("sbdhabhd");
+        dog_3.getNumberOfBones(30);
     }
 }

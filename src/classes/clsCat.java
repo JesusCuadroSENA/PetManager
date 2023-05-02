@@ -6,7 +6,6 @@ public class clsCat extends clsPet{
     private String breed;
     
     public clsCat() {
-        
     }
     
     public clsCat(String breed,int code, String name, int born_year, String color, String healthStatus) {
@@ -17,11 +16,11 @@ public class clsCat extends clsPet{
     public clsCat(String breed) {
         this.breed = breed;
     }
-
+    
     public String getBreed() {
         return breed;
     }
-
+    
     public void setBreed(String breed) {
         this.breed = breed;
     }
@@ -29,5 +28,14 @@ public class clsCat extends clsPet{
     @Override
     public void Sound(){
         System.out.println("Esta maullando " + this.name);
+    }
+    
+
+    public String getAnimalType() {
+        return "Gato";
+    }
+
+    public int getNumberOfBones() {
+        return 230;
     }
 }

@@ -5,7 +5,7 @@ public class clsDog extends clsPet{
     private String breed;
     private boolean pedigree;
     
-    public clsDog() {    
+    public clsDog() {
     }
 
     public clsDog(String breed, int code, String name, int born_year, String color, String healthStatus, boolean pedigree) {
@@ -33,5 +33,13 @@ public class clsDog extends clsPet{
     @Override
     public void Sound(){
         System.out.println("Esta ladrando " + this.name);
+    }
+    
+    public String getAnimalType() {
+        return "Domestico";
+    }
+
+    public int getNumberOfBones() {
+        return 0;
     }
 }

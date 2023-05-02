@@ -11,8 +11,9 @@ public class clsPet implements animal, vertebrate{
     private int born_year;
     private String color;
     private String healthStatus;
+    private clsVeterinary veterinary;
            
-    public clsPet() {  
+    public clsPet() {
     }
 
     public clsPet(int code, String name, int born_year, String color, String healthStatus) {
@@ -95,15 +96,13 @@ public class clsPet implements animal, vertebrate{
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
-    
+
     @Override
     public void getAnimalType(String Tipo) {
-        System.out.println(this.name+" es de tipo "+Tipo);
     }
 
     @Override
     public void getNumberOfBones(int Bones) {
-        System.out.println(this.name+" tiene " + Bones + " huesos.");
     }
 }
 
