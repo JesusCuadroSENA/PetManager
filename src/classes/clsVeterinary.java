@@ -3,7 +3,7 @@ package classes;
 
 import java.util.List;
 
-public class clsVeterinary {
+public class clsVeterinary extends AbstHospital {
     private String name;
     private String phone;
     private String adress;
@@ -52,6 +52,16 @@ public class clsVeterinary {
 
     public void setDoctor(clsDoctor doctor) {
         this.doctor = doctor;
+    }
+
+    @Override
+    public String getPatientType() {
+        return "Animal";
+    }
+
+    @Override
+    public String Surgery() {
+        return "Surgery date information";
     }
     
     

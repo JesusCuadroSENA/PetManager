@@ -17,7 +17,6 @@ public class interfaces {
         System.out.println(dog.getNumberOfBones());
         
         System.out.println("" + cat.getNumberOfBones());
-        
     }
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
