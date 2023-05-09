@@ -10,10 +10,10 @@ public class PetManager {
         pet1.setName("Tobi");
         pet1.setBorn_year(2010);
         pet1.setHealthStatus("Sano");
-        pet1.setCode(1);
+        pet1.setCode("1");
         pet1.setColor("Rojo");
         
-        clsPet pet2 = new clsPet(2, "Chita", 2010, "Negro", "Saludable");
+        clsPet pet2 = new clsPet("2", "Chita", 2010, "Negro", "Saludable");
         
         
         if(pet1.getBorn_year()<pet2.getBorn_year()){

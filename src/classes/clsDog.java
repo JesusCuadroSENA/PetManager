@@ -8,7 +8,7 @@ public class clsDog extends clsPet{
     public clsDog() {
     }
 
-    public clsDog(String breed, int code, String name, int born_year, String color, String healthStatus, boolean pedigree) {
+    public clsDog(String breed, String code, String name, int born_year, String color, String healthStatus, boolean pedigree) {
         super(code, name, born_year, color, healthStatus);
         this.breed = breed;
         this.pedigree = pedigree;
