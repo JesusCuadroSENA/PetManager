@@ -6,7 +6,7 @@ import interfaces.vertebrate;
 
 public class clsPet implements animal, vertebrate{
 
-    private int code;
+    private String code;
     String name;
     private int born_year;
     private String color;
@@ -16,7 +16,7 @@ public class clsPet implements animal, vertebrate{
     public clsPet() {
     }
 
-    public clsPet(int code, String name, int born_year, String color, String healthStatus) {
+    public clsPet(String code, String name, int born_year, String color, String healthStatus) {
         this.code = code;
         this.name = name;
         this.born_year = born_year;
@@ -57,7 +57,7 @@ public class clsPet implements animal, vertebrate{
         System.out.println("El animal " + this.name + " se esta acicalando");
     }
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
@@ -77,7 +77,7 @@ public class clsPet implements animal, vertebrate{
         return healthStatus;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 

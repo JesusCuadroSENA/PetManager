@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+<<<<<<< HEAD
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
         <file>
             <url>src/classes/clsDog.java</url>
@@ -15,4 +16,7 @@
             <file>file:/C:/Users/Jesus/PetManager/src/petmanager/Polymorphism.java</file>
         </group>
     </open-files>
+=======
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+>>>>>>> c5b36a5ab056cde4c4b5202fd814db05811058e5
 </project-private>
