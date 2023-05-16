@@ -1,8 +1,10 @@
 
 package interfaces;
 
+import classes.clsPet;
+
 public interface animal {
     
-    public void getAnimalType(String Tipo);
+    public void getAnimalType(clsPet Tipo);
     
 }

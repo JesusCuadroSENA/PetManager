@@ -96,13 +96,20 @@ public class clsPet implements animal, vertebrate{
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
-
-    @Override
-    public void getAnimalType(String Tipo) {
+    
+    
+    
+    public String getAnimalType() {
+        return "Perro";
     }
 
     @Override
     public void getNumberOfBones(int Bones) {
     }
+
+    @Override
+    public void getAnimalType(clsPet Tipo) {
+    }
+    
 }
 
