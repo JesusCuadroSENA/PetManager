@@ -90,13 +90,13 @@
                                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField5" min="-2" pref="264" max="-2" attributes="0"/>
+                                      <Component id="txtCodeCat" min="-2" pref="264" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jTextField6" pref="456" max="32767" attributes="0"/>
+                                      <Component id="txtBornYearCat" pref="456" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -104,12 +104,12 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField8" max="32767" attributes="0"/>
+                                      <Component id="txtColorCat" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField7" pref="285" max="32767" attributes="0"/>
+                                      <Component id="txtNameCat" pref="285" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -117,7 +117,7 @@
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jComboBox3" min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="cbHealthStatusCat" min="-2" pref="154" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -125,13 +125,13 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBuscarCat" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCrearCat" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnEliminarCat" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnEditarCat" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -145,30 +145,30 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCodeCat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNameCat" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtBornYearCat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtColorCat" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbHealthStatusCat" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBuscarCat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCrearCat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEliminarCat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditarCat" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -176,14 +176,13 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JComboBox" name="jComboBox3">
+            <Component class="javax.swing.JComboBox" name="cbHealthStatusCat">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="3">
+                    <StringItem index="0" value="Enfermo"/>
+                    <StringItem index="1" value="Sano"/>
+                    <StringItem index="2" value="En Diagnostico"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -195,10 +194,10 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="0" value="Persia"/>
+                    <StringItem index="1" value="Siberiano"/>
+                    <StringItem index="2" value="Siames"/>
+                    <StringItem index="3" value="Kohana"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -206,25 +205,13 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField5">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txtCodeCat">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField6">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txtBornYearCat">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField3"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txtNameCat">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField8">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField4"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txtColorCat">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
@@ -256,27 +243,27 @@
                 <Property name="text" type="java.lang.String" value="Health Status: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="btnBuscarCat">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton5"/>
+                <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="btnCrearCat">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton6"/>
+                <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearCatActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton7">
+            <Component class="javax.swing.JButton" name="btnEliminarCat">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton7"/>
+                <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton8">
+            <Component class="javax.swing.JButton" name="btnEditarCat">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton8"/>
+                <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -399,7 +386,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Component id="cbHealthStatus" min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="cbHealthStatusDog" min="-2" pref="154" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -413,13 +400,13 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                      <Component id="btnBuscar" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnBuscarDog" min="-2" pref="105" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                      <Component id="btnCrear" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnCrearDog" min="-2" pref="105" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                      <Component id="btnEliminar" min="-2" pref="103" max="-2" attributes="0"/>
+                      <Component id="btnEliminarDog" min="-2" pref="103" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                      <Component id="btnEditar" min="-2" pref="101" max="-2" attributes="0"/>
+                      <Component id="btnEditarDog" min="-2" pref="101" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -445,19 +432,19 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbHealthStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbHealthStatusDog" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cbBreed" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cbPedigree" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="btnEliminar" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                              <Component id="btnEditar" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="btnEliminarDog" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="btnEditarDog" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="btnCrear" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                              <Component id="btnBuscar" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="btnCrearDog" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="btnBuscarDog" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -514,7 +501,7 @@
                 <Property name="text" type="java.lang.String" value="Breed: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cbHealthStatus">
+            <Component class="javax.swing.JComboBox" name="cbHealthStatusDog">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -597,7 +584,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCrear">
+            <Component class="javax.swing.JButton" name="btnCrearDog">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="71" green="3b" red="f5" type="rgb"/>
@@ -608,10 +595,10 @@
                 <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearDogActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnBuscar">
+            <Component class="javax.swing.JButton" name="btnBuscarDog">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="71" green="3b" red="f5" type="rgb"/>
@@ -622,10 +609,10 @@
                 <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarDogActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEditar">
+            <Component class="javax.swing.JButton" name="btnEditarDog">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="71" green="3b" red="f5" type="rgb"/>
@@ -636,10 +623,10 @@
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarDogActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEliminar">
+            <Component class="javax.swing.JButton" name="btnEliminarDog">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="71" green="3b" red="f5" type="rgb"/>
@@ -650,7 +637,7 @@
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarDogActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="cbPedigree">

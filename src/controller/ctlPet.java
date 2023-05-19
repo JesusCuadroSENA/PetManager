@@ -1,12 +1,18 @@
 
 package controller;
 
-import classes.clsPet;
+import classes.*;
+import model.*;
 
 
 public class ctlPet {
     
+    private modelDog modelDog;
+    private modelCat modelCat;
+    
     public ctlPet(){
+        this.modelDog = new modelDog();
+        this.modelCat = new modelCat();
     }
     
     public boolean CreatePet(clsPet pet){
@@ -14,8 +20,10 @@ public class ctlPet {
         try{
             switch (pet.getAnimalType()){
                 case "Gato":
+                this.modelCat.CreatePet((clsCat)pet);
                 break;
                 case "Perro":
+                this.modelDog.CreatePet((clsDog)pet);
                 break;
             }
             return true;
@@ -28,8 +36,10 @@ public class ctlPet {
         try{
             switch (pet.getAnimalType()){
                 case "Gato":
+                this.modelCat.EditPet((clsCat)pet);
                 break;
                 case "Perro":
+                this.modelDog.EditPet((clsDog)pet);
                 break;
             }
             return true;
@@ -42,8 +52,10 @@ public class ctlPet {
         try{
             switch (pet.getAnimalType()){
                 case "Gato":
+                this.modelCat.DeletePet((clsCat)pet);
                 break;
                 case "Perro":
+                this.modelDog.DeletePet((clsDog)pet);
                 break;
             }
             return true;
@@ -57,9 +69,11 @@ public class ctlPet {
         try{
             switch(type){
                 case "Gato":
-                    break;
+                this.modelCat.SearchPet(code);
+                break;
                 case "Perro":
-                    break;
+                this.modelDog.SearchPet(code);
+                break;
             }
             return pet;
         } catch (Exception e){
