@@ -58,7 +58,7 @@ public class FrmPetManager extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         cbHealthStatusDog = new javax.swing.JComboBox<>();
-        cbBreed = new javax.swing.JComboBox<>();
+        cbBreedDog = new javax.swing.JComboBox<>();
         txtCodeDog = new javax.swing.JTextField();
         txtBornYearDog = new javax.swing.JTextField();
         txtNameDog = new javax.swing.JTextField();
@@ -241,9 +241,9 @@ public class FrmPetManager extends javax.swing.JFrame {
         cbHealthStatusDog.setForeground(new java.awt.Color(82, 50, 32));
         cbHealthStatusDog.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enfermo", "Sano", "En Diagnostico" }));
 
-        cbBreed.setBackground(new java.awt.Color(255, 204, 204));
-        cbBreed.setForeground(new java.awt.Color(82, 50, 32));
-        cbBreed.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pastor Aleman", "Chihuahua", "Golden" }));
+        cbBreedDog.setBackground(new java.awt.Color(255, 204, 204));
+        cbBreedDog.setForeground(new java.awt.Color(82, 50, 32));
+        cbBreedDog.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pastor Aleman", "Chihuahua", "Golden" }));
 
         txtCodeDog.setBackground(new java.awt.Color(255, 204, 204));
         txtCodeDog.setForeground(new java.awt.Color(82, 50, 32));
@@ -336,7 +336,7 @@ public class FrmPetManager extends javax.swing.JFrame {
                         .addGap(72, 72, 72)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbBreed, 0, 315, Short.MAX_VALUE)
+                        .addComponent(cbBreedDog, 0, 315, Short.MAX_VALUE)
                         .addGap(71, 71, 71)
                         .addComponent(cbPedigree)
                         .addGap(60, 60, 60)))
@@ -372,7 +372,7 @@ public class FrmPetManager extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(cbHealthStatusDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbBreed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbBreedDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbPedigree))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -436,7 +436,7 @@ public class FrmPetManager extends javax.swing.JFrame {
             String name = txtNameDog.getText();
             String color = txtColorDog.getText();
             int bornyear = Integer.parseInt(txtBornYearDog.getText());
-            String breed = cbBreed.getSelectedItem().toString();
+            String breed = cbBreedDog.getSelectedItem().toString();
             String healthstatus = cbHealthStatusDog.getSelectedItem().toString();
             boolean pedigree;
             pedigree = cbPedigree.isSelected();
@@ -471,7 +471,7 @@ public class FrmPetManager extends javax.swing.JFrame {
             txtColorDog.setText(dog.getColor());
             txtBornYearDog.setText(Integer.toString(dog.getBorn_year()));
             cbHealthStatusDog.setSelectedItem(dog.getHealthStatus());
-            cbBreed.setSelectedItem(dog.getBreed());
+            cbBreedDog.setSelectedItem(dog.getBreed());
             cbPedigree.setSelected(dog.isPedigree());
         }
     }//GEN-LAST:event_btnBuscarDogActionPerformed
@@ -484,7 +484,7 @@ public class FrmPetManager extends javax.swing.JFrame {
         String name = txtNameDog.getText();
         String color = txtColorDog.getText();
         int bornyear = Integer.parseInt(txtBornYearDog.getText());
-        String breed = cbBreed.getSelectedItem().toString();
+        String breed = cbBreedDog.getSelectedItem().toString();
         String healthstatus = cbHealthStatusDog.getSelectedItem().toString();
         boolean pedigree = cbPedigree.isSelected();
         
@@ -501,6 +501,7 @@ public class FrmPetManager extends javax.swing.JFrame {
                     dog.setBorn_year(bornyear);
                     dog.setPedigree(pedigree);
                     FillJlist();
+                    clearDogFields();
                     JOptionPane.showMessageDialog(null, "Su registro ha sido actualizado");
                     break;
                 }
@@ -530,6 +531,7 @@ public class FrmPetManager extends javax.swing.JFrame {
                     if(dog.getCode().equals(code)){
                         dogObjectList.remove(dog);
                         FillJlist();
+                        clearDogFields();
                         JOptionPane.showMessageDialog(null, "Su registro ha sido eliminado");
                         found = true;
                         break;
@@ -546,6 +548,12 @@ public class FrmPetManager extends javax.swing.JFrame {
     
     private void clearDogFields(){
         txtCodeDog.setText("");
+        txtNameDog.setText("");
+        txtColorDog.setText("");
+        txtBornYearDog.setText("");
+        cbBreedDog.setSelectedIndex(0);
+        cbHealthStatusDog.setSelectedIndex(0);
+        cbPedigree.setSelected(false);
     }
     
     private void FillJlist(){
@@ -578,7 +586,7 @@ public class FrmPetManager extends javax.swing.JFrame {
     private javax.swing.JButton btnEditarDog;
     private javax.swing.JButton btnEliminarCat;
     private javax.swing.JButton btnEliminarDog;
-    private javax.swing.JComboBox<String> cbBreed;
+    private javax.swing.JComboBox<String> cbBreedDog;
     private javax.swing.JComboBox<String> cbHealthStatusCat;
     private javax.swing.JComboBox<String> cbHealthStatusDog;
     private javax.swing.JCheckBox cbPedigree;

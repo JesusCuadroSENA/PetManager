@@ -72,7 +72,9 @@ public class ctlPet {
                 this.modelCat.SearchPet(code);
                 break;
                 case "Perro":
-                this.modelDog.SearchPet(code);
+                this.modelDog = new modelDog();
+                pet = this.modelDog.SearchPet(code);
+                
                 break;
             }
             return pet;
