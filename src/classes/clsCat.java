@@ -8,8 +8,8 @@ public class clsCat extends clsPet{
     public clsCat() {
     }
     
-    public clsCat(String breed,String code, String name, int born_year, String color, String healthStatus) {
-        super(code, name, born_year, color, healthStatus);
+    public clsCat(String breed,String code, String name, int bornyear, String color, String healthstatus) {
+        super(code, name, bornyear, color, healthstatus);
         this.breed = breed;
     }
 

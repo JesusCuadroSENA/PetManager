@@ -8,8 +8,8 @@ public class PetManager {
         
         clsPet pet1 = new clsPet();
         pet1.setName("Tobi");
-        pet1.setBorn_year(2010);
-        pet1.setHealthStatus("Sano");
+        pet1.setBorn_Year(2010);
+        pet1.setHealth_Status("Sano");
         pet1.setCode("1");
         pet1.setColor("Rojo");
         

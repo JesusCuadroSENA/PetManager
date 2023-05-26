@@ -10,18 +10,18 @@ public class clsPet implements animal, vertebrate{
     String name;
     private int born_year;
     private String color;
-    private String healthStatus;
+    private String health_status;
     private clsVeterinary veterinary;
            
     public clsPet() {
     }
 
-    public clsPet(String code, String name, int born_year, String color, String healthStatus) {
+    public clsPet(String code, String name, int born_year, String color, String health_status) {
         this.code = code;
         this.name = name;
         this.born_year = born_year;
         this.color = color;
-        this.healthStatus = healthStatus;
+        this.health_status = health_status;
         
     }
     
@@ -73,8 +73,8 @@ public class clsPet implements animal, vertebrate{
         return color;
     }
 
-    public String getHealthStatus() {
-        return healthStatus;
+    public String getHealth_Status() {
+        return health_status;
     }
 
     public void setCode(String code) {
@@ -85,7 +85,7 @@ public class clsPet implements animal, vertebrate{
         this.name = name;
     }
 
-    public void setBorn_year(int born_year) {
+    public void setBorn_Year(int born_year) {
         this.born_year = born_year;
     }
 
@@ -93,11 +93,9 @@ public class clsPet implements animal, vertebrate{
         this.color = color;
     }
 
-    public void setHealthStatus(String healthStatus) {
-        this.healthStatus = healthStatus;
+    public void setHealth_Status(String health_status) {
+        this.health_status = health_status;
     }
-    
-    
     
     public String getAnimalType() {
         return "Perro";

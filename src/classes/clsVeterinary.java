@@ -4,6 +4,7 @@ package classes;
 import java.util.List;
 
 public class clsVeterinary extends AbstHospital {
+    
     private String name;
     private String phone;
     private String adress;
@@ -18,7 +19,7 @@ public class clsVeterinary extends AbstHospital {
     
     public String PetCare(clsPet pet){
         System.out.println("Atendiendo a la mascota " + pet.getName());
-        return pet.getHealthStatus();
+        return pet.getHealth_Status();
     }
 
     public String getName() {

@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Connection;
 
+//IMPORTANTE importar a "Libraries" el mysql-connector.jar en cualquiera de sus versiones
+
 public class config {
     
     Connection con;

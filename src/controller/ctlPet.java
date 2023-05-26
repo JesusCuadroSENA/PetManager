@@ -70,11 +70,11 @@ public class ctlPet {
             switch(type){
                 case "Gato":
                 this.modelCat.SearchPet(code);
+                pet = this.modelCat.SearchPet(code);
                 break;
                 case "Perro":
                 this.modelDog = new modelDog();
                 pet = this.modelDog.SearchPet(code);
-                
                 break;
             }
             return pet;
