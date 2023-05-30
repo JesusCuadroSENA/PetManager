@@ -7,11 +7,13 @@ import java.awt.HeadlessException;
 import java.util.LinkedList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import model.modelDog;
 
 
 public class FrmPetManager extends javax.swing.JFrame {
     
     ctlPet ctlPet;
+    modelDog modeldog;
     
     LinkedList<clsDog> dogObjectList = new LinkedList<>();
     LinkedList<clsCat> catObjectList = new LinkedList<>();
@@ -19,6 +21,8 @@ public class FrmPetManager extends javax.swing.JFrame {
     public FrmPetManager() {
         initComponents();
         this.ctlPet = new ctlPet();
+        this.modeldog = new modelDog();
+
     }
 
     
@@ -472,7 +476,8 @@ public class FrmPetManager extends javax.swing.JFrame {
             } else {
                 clsDog dog = new clsDog(breed, code, name, born_year, color, health_status, pedigree);
    
-                ctlPet.CreatePet(dog);
+                modeldog.CreatePet(dog);
+                
                 
                 JOptionPane.showMessageDialog(this, "Registro guardado");
                 
