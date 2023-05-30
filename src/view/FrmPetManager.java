@@ -18,7 +18,6 @@ public class FrmPetManager extends javax.swing.JFrame {
 
     public FrmPetManager() {
         initComponents();
-        setLocationRelativeTo(null);
         this.ctlPet = new ctlPet();
     }
 
@@ -472,9 +471,11 @@ public class FrmPetManager extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Llene todos los campos");
             } else {
                 clsDog dog = new clsDog(breed, code, name, born_year, color, health_status, pedigree);
-                dogObjectList.add(dog);
-                this.FillJlist();
+   
+                ctlPet.CreatePet(dog);
+                
                 JOptionPane.showMessageDialog(this, "Registro guardado");
+                
             }
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, "Digite un valor valido");

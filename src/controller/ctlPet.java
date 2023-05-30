@@ -19,11 +19,11 @@ public class ctlPet {
      
         try{
             switch (pet.getAnimalType()){
-                case "Gato":
-                this.modelCat.CreatePet((clsCat)pet);
-                break;
                 case "Perro":
                 this.modelDog.CreatePet((clsDog)pet);
+                break;
+                case "Gato":
+                this.modelCat.CreatePet((clsCat)pet);
                 break;
             }
             return true;

@@ -2,12 +2,15 @@ package model;
 
 import classes.*;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class modelDog {
-
+    
     DbData dbData;
 
     public modelDog() {
@@ -17,25 +20,26 @@ public class modelDog {
     public boolean CreatePet(clsDog dog) {
 
         try (Connection con = DriverManager.getConnection(dbData.getUrl(), dbData.getUser(), dbData.getPassword())) {
+            
             if (con != null) {
-                System.out.println("Conectado desde modelDog CreateDog");
+                System.out.println("Conectado");
             }
 
-            String query = "INSERT INTO tblpet (IDPet, CodePet, NamePet, BornYearPet, ColorPet, HealthStatusPet) VALUES (?,?,?,?,?);";
-            PreparedStatement statementPet = con.prepareStatement(query);
+            String sql = "INSERT INTO tblpet ( CodePet, NamePet, BornYearPet, ColorPet, HealthStatusPet) VALUES (?,?,?,?,?)";
+            PreparedStatement statementPet = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statementPet.setString(1, dog.getCode());
             statementPet.setString(2, dog.getName());
             statementPet.setInt(3, dog.getBorn_year());
             statementPet.setString(4, dog.getColor());
             statementPet.setString(5, dog.getHealth_Status());
-
-            int rowsInserted = statementPet.executeUpdate();          
-
-            return true;
+            
+            statementPet.execute();
             
         } catch (SQLException e) {            
+            e.printStackTrace();
             return false;
         }
+        return false;
     }
 
     public boolean EditPet(clsDog dog) {
