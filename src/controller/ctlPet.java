@@ -48,14 +48,14 @@ public class ctlPet {
         }
     }
     
-    public boolean DeletePet(clsPet pet){
+    public boolean DeletePet(String code, String type){
         try{
-            switch (pet.getAnimalType()){
+            switch (type){
                 case "Gato":
-                this.modelCat.DeletePet((clsCat)pet);
+                this.modelCat.DeletePet(code);
                 break;
                 case "Perro":
-                this.modelDog.DeletePet((clsDog)pet);
+                this.modelDog.DeletePet(code);
                 break;
             }
             return true;

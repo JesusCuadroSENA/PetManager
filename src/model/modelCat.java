@@ -21,7 +21,7 @@ public class modelCat {
         }
     }
     
-    public boolean DeletePet(clsCat cat){
+    public boolean DeletePet(String code){
         try{
             return true;
         }catch (Exception e){

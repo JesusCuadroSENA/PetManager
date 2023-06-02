@@ -520,25 +520,16 @@ public class FrmPetManager extends javax.swing.JFrame {
         String breed = cbBreedDog.getSelectedItem().toString();
         String health_status = cbHealthStatusDog.getSelectedItem().toString();
         boolean pedigree = cbPedigree.isSelected();
+      
         
-        if((code.equals("")) || (name.equals("")) || (color.equals("")) || (breed.equals("")) || (health_status.equals(""))){
+        if((code.equals("")) || (name.equals("")) || (color.equals(""))|| (breed.equals("")) || (health_status.equals(""))){
                 
             JOptionPane.showMessageDialog(null, "Ingrese todos los campos");
                 
         } else {
-            for (clsDog dog : dogObjectList){
-                if (dog.getCode().equals(code)){
-                    dog.setName(name);
-                    dog.setColor(color);
-                    dog.setBreed(breed);
-                    dog.setBorn_Year(born_year);
-                    dog.setPedigree(pedigree);
-                    FillJlist();
-                    clearDogFields();
-                    JOptionPane.showMessageDialog(null, "Su registro ha sido actualizado");
-                    break;
-                }
-            }      
+                clsDog dog = new clsDog(breed, code, name, born_year, color, health_status, pedigree);
+                modeldog.EditPet(dog);
+                JOptionPane.showMessageDialog(null, "Su registro ha sido actualizado");
         }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Digite un valor valido!!");
@@ -574,17 +565,11 @@ public class FrmPetManager extends javax.swing.JFrame {
             if (code.equals("")){
                 JOptionPane.showMessageDialog(null, "Ingrese un codigo valido");
             } else {
-                boolean found = false;
-                for (clsDog dog : dogObjectList){
-                    if(dog.getCode().equals(code)){
-                        dogObjectList.remove(dog);
-                        FillJlist();
+                        boolean found = false;
+                        found = ctlPet.DeletePet(code, "Perro");
+                        this.FillJlist();
                         clearDogFields();
                         JOptionPane.showMessageDialog(null, "Su registro ha sido eliminado");
-                        found = true;
-                        break;
-                    }
-                }
                 if(!found){
                     JOptionPane.showMessageDialog(null, "No hemos encontrado el codigo");
                 }

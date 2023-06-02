@@ -1,8 +1,7 @@
 package model;
 
-import java.sql.Connection;
-
 //IMPORTANTE importar a "Libraries" el mysql-connector.jar en cualquiera de sus versiones
+
 public class DbData {
 
     private final String driver = "com.mysql.cj.jdbc.Driver";
