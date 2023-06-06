@@ -5,14 +5,20 @@ import classes.*;
 import controller.*;
 import java.awt.HeadlessException;
 import java.util.LinkedList;
-import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.modelCat;
 import model.modelDog;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import model.DbData;
 
 
 public class FrmPetManager extends javax.swing.JFrame {
     
+    DbData dbData;
+
     ctlPet ctlPet;
     modelDog modeldog;
     modelCat modelCat;
@@ -22,10 +28,12 @@ public class FrmPetManager extends javax.swing.JFrame {
 
     public FrmPetManager() {
         initComponents();
+        this.dbData = new DbData();
         this.ctlPet = new ctlPet();
         this.modeldog = new modelDog();
         this.modelCat = new modelCat();
-
+        mostrarDatosDog();
+        mostrarDatosCat();
     }
 
     
@@ -52,8 +60,8 @@ public class FrmPetManager extends javax.swing.JFrame {
         btnEliminarCat = new javax.swing.JButton();
         btnEditarCat = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        PetList = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        CatTable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -72,10 +80,13 @@ public class FrmPetManager extends javax.swing.JFrame {
         btnEditarDog = new javax.swing.JButton();
         btnEliminarDog = new javax.swing.JButton();
         cbPedigree = new javax.swing.JCheckBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        DogTable = new javax.swing.JTable();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setBackground(new java.awt.Color(245, 59, 113));
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
@@ -176,8 +187,9 @@ public class FrmPetManager extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtColorCat))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtColorCat)
+                                .addGap(6, 6, 6))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
@@ -196,41 +208,41 @@ public class FrmPetManager extends javax.swing.JFrame {
                         .addGap(19, 19, 19)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(jLabel9)
-                                .addGap(43, 43, 43)
-                                .addComponent(cbBreedCat, 0, 529, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnCrearCat, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(60, 60, 60)
                                 .addComponent(btnEliminarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(61, 61, 61)
                                 .addComponent(btnEditarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jLabel9)
+                                .addGap(43, 43, 43)
+                                .addComponent(cbBreedCat, 0, 529, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(13, 13, 13)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txtCodeCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNameCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodeCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
+                    .addComponent(jLabel11)
                     .addComponent(txtBornYearCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtColorCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
+                    .addComponent(jLabel8))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbBreedCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(cbHealthStatusCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbBreedCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
-                .addGap(51, 51, 51)
+                .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCrearCat, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,15 +254,18 @@ public class FrmPetManager extends javax.swing.JFrame {
         jTabbedPane1.addTab("CatManager", jPanel2);
         jPanel2.getAccessibleContext().setAccessibleName("CatManager");
 
-        PetList.setBackground(new java.awt.Color(255, 204, 204));
-        PetList.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        PetList.setForeground(new java.awt.Color(82, 50, 32));
-        PetList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "AQUI APARECERAN LAS MASCOTAS!!!" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(PetList);
+        CatTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(CatTable);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -258,18 +273,18 @@ public class FrmPetManager extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
         );
 
-        jTabbedPane1.addTab("PetList", jPanel3);
+        jTabbedPane1.addTab("CatTable", jPanel3);
         jPanel3.getAccessibleContext().setAccessibleName("PetList");
 
         jPanel1.setBackground(new java.awt.Color(82, 50, 32));
@@ -411,13 +426,13 @@ public class FrmPetManager extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
                     .addComponent(txtCodeDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNameDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                    .addComponent(jLabel1)
+                    .addComponent(txtNameDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel4)
@@ -446,44 +461,103 @@ public class FrmPetManager extends javax.swing.JFrame {
         jTabbedPane1.addTab("DogManager", jPanel1);
         jPanel1.getAccessibleContext().setAccessibleName("DogManager");
 
+        DogTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(DogTable);
+
+        jTabbedPane1.addTab("DogTable", jScrollPane1);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 372, -1, 307));
+        jTabbedPane1.getAccessibleContext().setAccessibleName("Container");
+        jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
+
         jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 70)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(245, 59, 113));
         jLabel13.setText("Manager de Mascotas");
         jLabel13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 272, 702, -1));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/images.png"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(345, 345, 345)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99))
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
-                .addGap(18, 18, 18)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.getAccessibleContext().setAccessibleName("Container");
-        jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 6, 234, 260));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cbPedigreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPedigreeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbPedigreeActionPerformed
+
+    private void btnEliminarDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarDogActionPerformed
+        try{
+            String code = txtCodeDog.getText();
+            if (code.equals("")){
+                JOptionPane.showMessageDialog(null, "Ingrese un codigo valido");
+            } else {
+                boolean found = false;
+                found = ctlPet.DeletePet(code, "Perro");
+                clearDogFields();
+                JOptionPane.showMessageDialog(null, "Su registro ha sido eliminado");
+                if(!found){
+                    JOptionPane.showMessageDialog(null, "No hemos encontrado el codigo");
+                }
+            }
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Los datos no son validos");
+        }
+    }//GEN-LAST:event_btnEliminarDogActionPerformed
+
+    private void btnEditarDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarDogActionPerformed
+
+        try{
+
+            String code = txtCodeDog.getText();
+            String name = txtNameDog.getText();
+            String color = txtColorDog.getText();
+            int born_year = Integer.parseInt(txtBornYearDog.getText());
+            String breed = cbBreedDog.getSelectedItem().toString();
+            String health_status = cbHealthStatusDog.getSelectedItem().toString();
+            boolean pedigree = cbPedigree.isSelected();
+
+            if((code.equals("")) || (name.equals("")) || (color.equals(""))|| (breed.equals("")) || (health_status.equals(""))){
+
+                JOptionPane.showMessageDialog(null, "Ingrese todos los campos");
+
+            } else {
+                clsDog dog = new clsDog(breed, code, name, born_year, color, health_status, pedigree);
+                modeldog.EditPet(dog);
+                JOptionPane.showMessageDialog(null, "Su registro ha sido actualizado");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Digite un valor valido!!");
+        }
+    }//GEN-LAST:event_btnEditarDogActionPerformed
+
+    private void btnBuscarDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarDogActionPerformed
+
+        String code = txtCodeDog.getText();
+
+        clsDog dog = (clsDog) ctlPet.SearchPet(code, "Perro");
+
+        if(dog == null){
+            JOptionPane.showMessageDialog(this, "Codigo no encontrado");
+        }else{
+            txtNameDog.setText(dog.getName());
+            txtColorDog.setText(dog.getColor());
+            txtBornYearDog.setText(Integer.toString(dog.getBorn_year()));
+            cbHealthStatusDog.setSelectedItem(dog.getHealth_Status());
+            cbBreedDog.setSelectedItem(dog.getBreed());
+            cbPedigree.setSelected(dog.isPedigree());
+        }
+    }//GEN-LAST:event_btnBuscarDogActionPerformed
 
     private void btnCrearDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearDogActionPerformed
 
@@ -500,127 +574,19 @@ public class FrmPetManager extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Llene todos los campos");
             } else {
                 clsDog dog = new clsDog(breed, code, name, born_year, color, health_status, pedigree);
-   
+
                 modeldog.CreatePet(dog);
-                
-                
+
                 JOptionPane.showMessageDialog(this, "Registro guardado");
-                
+
             }
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, "Digite un valor valido");
         }
     }//GEN-LAST:event_btnCrearDogActionPerformed
 
-    private void cbPedigreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPedigreeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbPedigreeActionPerformed
-
-    private void btnBuscarDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarDogActionPerformed
-        
-        String code = txtCodeDog.getText();
-        
-        clsDog dog = (clsDog) ctlPet.SearchPet(code, "Perro");
-        
-        if(dog == null){
-            JOptionPane.showMessageDialog(this, "Codigo no encontrado");
-        }else{
-            txtNameDog.setText(dog.getName());
-            txtColorDog.setText(dog.getColor());
-            txtBornYearDog.setText(Integer.toString(dog.getBorn_year()));
-            cbHealthStatusDog.setSelectedItem(dog.getHealth_Status());
-            cbBreedDog.setSelectedItem(dog.getBreed());
-            cbPedigree.setSelected(dog.isPedigree());
-        }
-    }//GEN-LAST:event_btnBuscarDogActionPerformed
-
-    private void btnEditarDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarDogActionPerformed
-        
-        try{
-            
-        String code = txtCodeDog.getText();
-        String name = txtNameDog.getText();
-        String color = txtColorDog.getText();
-        int born_year = Integer.parseInt(txtBornYearDog.getText());
-        String breed = cbBreedDog.getSelectedItem().toString();
-        String health_status = cbHealthStatusDog.getSelectedItem().toString();
-        boolean pedigree = cbPedigree.isSelected();
-      
-        
-        if((code.equals("")) || (name.equals("")) || (color.equals(""))|| (breed.equals("")) || (health_status.equals(""))){
-                
-            JOptionPane.showMessageDialog(null, "Ingrese todos los campos");
-                
-        } else {
-                clsDog dog = new clsDog(breed, code, name, born_year, color, health_status, pedigree);
-                modeldog.EditPet(dog);
-                JOptionPane.showMessageDialog(null, "Su registro ha sido actualizado");
-        }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Digite un valor valido!!");
-        }
-    }//GEN-LAST:event_btnEditarDogActionPerformed
-
-    private void btnCrearCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCatActionPerformed
-
-        try{
-           String code = txtCodeCat.getText();
-           String name = txtNameCat.getText();
-           String color = txtColorCat.getText();
-           int born_year = Integer.parseInt(txtBornYearCat.getText());
-           String breed = cbBreedCat.getSelectedItem().toString();
-           String health_status = cbHealthStatusCat.getSelectedItem().toString();
-
-            if(code.equals("") || name.equals("") || color.equals("")){
-                JOptionPane.showMessageDialog(this, "Llene todos los campos");
-            } else {
-                clsCat cat = new clsCat(breed, code, name, born_year, color, health_status);
-                modelCat.CreatePet(cat);
-                JOptionPane.showMessageDialog(this, "Registro guardado");
-            }
-        } catch(HeadlessException | NumberFormatException e) {
-       JOptionPane.showMessageDialog(this, "Digite un valor valido");
-        }
-    }//GEN-LAST:event_btnCrearCatActionPerformed
-
-    private void btnEliminarDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarDogActionPerformed
-        try{
-            String code = txtCodeDog.getText();
-            if (code.equals("")){
-                JOptionPane.showMessageDialog(null, "Ingrese un codigo valido");
-            } else {
-                        boolean found = false;
-                        found = ctlPet.DeletePet(code, "Perro");
-                        this.FillJlist();
-                        clearDogFields();
-                        JOptionPane.showMessageDialog(null, "Su registro ha sido eliminado");
-                if(!found){
-                    JOptionPane.showMessageDialog(null, "No hemos encontrado el codigo");
-                }
-            }
-        } catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Los datos no son validos");
-        }
-    }//GEN-LAST:event_btnEliminarDogActionPerformed
-
-    private void btnBuscarCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCatActionPerformed
-        String code = txtCodeCat.getText();
-        
-        clsCat cat = (clsCat) ctlPet.SearchPet(code, "Gato");
-        
-        if(cat == null){
-            JOptionPane.showMessageDialog(this, "Codigo no encontrado");
-        }else{
-            txtNameCat.setText(cat.getName());
-            txtColorCat.setText(cat.getColor());
-            txtBornYearCat.setText(Integer.toString(cat.getBorn_year()));
-            cbHealthStatusCat.setSelectedItem(cat.getHealth_Status());
-            cbBreedCat.setSelectedItem(cat.getBreed());
-        }
-    }//GEN-LAST:event_btnBuscarCatActionPerformed
-
     private void btnEditarCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCatActionPerformed
-        try{        
+        try{
             String code = txtCodeCat.getText();
             String name = txtNameCat.getText();
             String color = txtColorCat.getText();
@@ -633,9 +599,9 @@ public class FrmPetManager extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ingrese todos los campos");
 
             } else {
-                    clsCat cat = new clsCat(breed, code, name, born_year, color, health_status);
-                    modelCat.EditPet(cat);
-                    JOptionPane.showMessageDialog(null, "Su registro ha sido actualizado");
+                clsCat cat = new clsCat(breed, code, name, born_year, color, health_status);
+                modelCat.EditPet(cat);
+                JOptionPane.showMessageDialog(null, "Su registro ha sido actualizado");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Digite un valor valido!!");
@@ -643,16 +609,15 @@ public class FrmPetManager extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarCatActionPerformed
 
     private void btnEliminarCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCatActionPerformed
- try{
+        try{
             String code = txtCodeCat.getText();
             if (code.equals("")){
                 JOptionPane.showMessageDialog(null, "Ingrese un codigo valido");
             } else {
-                        boolean found = false;
-                        found = ctlPet.DeletePet(code, "Gato");
-                        this.FillJlist();
-                        clearCatFields();
-                        JOptionPane.showMessageDialog(null, "Su registro ha sido eliminado");
+                boolean found = false;
+                found = ctlPet.DeletePet(code, "Gato");
+                clearCatFields();
+                JOptionPane.showMessageDialog(null, "Su registro ha sido eliminado");
                 if(!found){
                     JOptionPane.showMessageDialog(null, "No hemos encontrado el codigo");
                 }
@@ -661,6 +626,44 @@ public class FrmPetManager extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Los datos no son validos");
         }
     }//GEN-LAST:event_btnEliminarCatActionPerformed
+
+    private void btnCrearCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCatActionPerformed
+
+        try{
+            String code = txtCodeCat.getText();
+            String name = txtNameCat.getText();
+            String color = txtColorCat.getText();
+            int born_year = Integer.parseInt(txtBornYearCat.getText());
+            String breed = cbBreedCat.getSelectedItem().toString();
+            String health_status = cbHealthStatusCat.getSelectedItem().toString();
+
+            if(code.equals("") || name.equals("") || color.equals("")){
+                JOptionPane.showMessageDialog(this, "Llene todos los campos");
+            } else {
+                clsCat cat = new clsCat(breed, code, name, born_year, color, health_status);
+                modelCat.CreatePet(cat);
+                JOptionPane.showMessageDialog(this, "Registro guardado");
+            }
+        } catch(HeadlessException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Digite un valor valido");
+        }
+    }//GEN-LAST:event_btnCrearCatActionPerformed
+
+    private void btnBuscarCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCatActionPerformed
+        String code = txtCodeCat.getText();
+
+        clsCat cat = (clsCat) ctlPet.SearchPet(code, "Gato");
+
+        if(cat == null){
+            JOptionPane.showMessageDialog(this, "Codigo no encontrado");
+        }else{
+            txtNameCat.setText(cat.getName());
+            txtColorCat.setText(cat.getColor());
+            txtBornYearCat.setText(Integer.toString(cat.getBorn_year()));
+            cbHealthStatusCat.setSelectedItem(cat.getHealth_Status());
+            cbBreedCat.setSelectedItem(cat.getBreed());
+        }
+    }//GEN-LAST:event_btnBuscarCatActionPerformed
     
     private void clearDogFields(){
         txtCodeDog.setText("");
@@ -681,17 +684,89 @@ public class FrmPetManager extends javax.swing.JFrame {
         cbHealthStatusCat.setSelectedIndex(0);
     }
     
-    private void FillJlist(){
-        DefaultListModel model = new DefaultListModel();
-        int index = 0;
-        for (clsDog dog : dogObjectList){
-            String data = dog.getName() + " - " + dog.getBreed() + " - " + " Perro";
-            model.add(index, data);
-            index++;
+   public void mostrarDatosDog() {
+       
+          try(Connection con = DriverManager.getConnection(dbData.getUrl(), dbData.getUser(), dbData.getPassword())) {
+            
+            if (con != null) {          
+                System.out.println("Conectado");
+            }
+
+        String[] titulos = {"PetCode",  "PetName", "PetHealth", "PetBornY", "PetColor", "DogBreed", "DogPedigree"};
+        String[] registros = new String[7];
+
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+
+        String sqlID = "SELECT CodePet, NamePet, HealthStatusPet, BornYearPet, ColorPet, BreedDog, PedigreeDog FROM tblpet INNER JOIN tbldog ON (tblpet.IDPet = tbldog.IDPet)";
+
+
+            java.sql.Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sqlID);
+
+            while (rs.next()) {
+
+                registros[0] = rs.getString("CodePet");
+                registros[1] = rs.getString("NamePet");
+                registros[2] = rs.getString("HealthStatusPet");
+                registros[3] = rs.getString("BornYearPet");
+                registros[4] = rs.getString("ColorPet");
+                registros[5] = rs.getString("BreedDog");
+                registros[6] = rs.getString("PedigreeDog");
+
+                modelo.addRow(registros);
+
+            }
+
+            DogTable.setModel(modelo);
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos" + e.getMessage());
         }
-        PetList.setModel(model);
+
     }
-    
+     
+   public void mostrarDatosCat() {
+       
+          try(Connection con = DriverManager.getConnection(dbData.getUrl(), dbData.getUser(), dbData.getPassword())) {
+            
+            if (con != null) {          
+                System.out.println("Conectado");
+            }
+
+        String[] titulos = {"PetCode",  "PetName", "PetHealth", "PetBornY", "PetColor", "CatBreed"};
+        String[] registros = new String[6];
+
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+
+        String sqlID = "SELECT CodePet, NamePet, HealthStatusPet, BornYearPet, ColorPet, BreedCat FROM tblpet INNER JOIN tblcat ON (tblpet.IDPet = tblcat.IDPet)";
+
+
+            java.sql.Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sqlID);
+
+            while (rs.next()) {
+
+                registros[0] = rs.getString("CodePet");
+                registros[1] = rs.getString("NamePet");
+                registros[2] = rs.getString("HealthStatusPet");
+                registros[3] = rs.getString("BornYearPet");
+                registros[4] = rs.getString("ColorPet");
+                registros[5] = rs.getString("BreedCat");
+
+                modelo.addRow(registros);
+
+            }
+
+            CatTable.setModel(modelo);
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos" + e.getMessage());
+        }
+
+    } 
+   
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -702,7 +777,8 @@ public class FrmPetManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> PetList;
+    private javax.swing.JTable CatTable;
+    private javax.swing.JTable DogTable;
     private javax.swing.JButton btnBuscarCat;
     private javax.swing.JButton btnBuscarDog;
     private javax.swing.JButton btnCrearCat;
@@ -734,6 +810,7 @@ public class FrmPetManager extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField txtBornYearCat;
     private javax.swing.JTextField txtBornYearDog;
