@@ -98,21 +98,27 @@ public class FrmPetManager extends javax.swing.JFrame {
         txtColorCat.setBackground(new java.awt.Color(255, 204, 204));
 
         jLabel7.setBackground(new java.awt.Color(221, 221, 221));
+        jLabel7.setForeground(new java.awt.Color(221, 221, 221));
         jLabel7.setText("Name: ");
 
         jLabel8.setBackground(new java.awt.Color(221, 221, 221));
+        jLabel8.setForeground(new java.awt.Color(221, 221, 221));
         jLabel8.setText("Color: ");
 
         jLabel9.setBackground(new java.awt.Color(221, 221, 221));
+        jLabel9.setForeground(new java.awt.Color(221, 221, 221));
         jLabel9.setText("Breed: ");
 
         jLabel10.setBackground(new java.awt.Color(221, 221, 221));
+        jLabel10.setForeground(new java.awt.Color(221, 221, 221));
         jLabel10.setText("Code:");
 
         jLabel11.setBackground(new java.awt.Color(221, 221, 221));
+        jLabel11.setForeground(new java.awt.Color(221, 221, 221));
         jLabel11.setText("Born Year: ");
 
         jLabel12.setBackground(new java.awt.Color(221, 221, 221));
+        jLabel12.setForeground(new java.awt.Color(221, 221, 221));
         jLabel12.setText("Health Status: ");
 
         btnBuscarCat.setBackground(new java.awt.Color(245, 59, 113));
@@ -166,8 +172,7 @@ public class FrmPetManager extends javax.swing.JFrame {
                                 .addGap(34, 34, 34)
                                 .addComponent(jLabel12)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbHealthStatusCat, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
+                                .addComponent(cbHealthStatusCat, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(btnBuscarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,9 +180,10 @@ public class FrmPetManager extends javax.swing.JFrame {
                         .addGap(19, 19, 19)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
                                 .addComponent(jLabel9)
-                                .addGap(58, 58, 58)
-                                .addComponent(cbBreedCat, 0, 511, Short.MAX_VALUE))
+                                .addGap(43, 43, 43)
+                                .addComponent(cbBreedCat, 0, 529, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnCrearCat, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(60, 60, 60)
@@ -454,7 +460,7 @@ public class FrmPetManager extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addContainerGap())
         );
 
         jTabbedPane1.getAccessibleContext().setAccessibleName("Container");
