@@ -7,6 +7,7 @@ import java.awt.HeadlessException;
 import java.util.LinkedList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import model.modelCat;
 import model.modelDog;
 
 
@@ -14,6 +15,7 @@ public class FrmPetManager extends javax.swing.JFrame {
     
     ctlPet ctlPet;
     modelDog modeldog;
+    modelCat modelCat;
     
     LinkedList<clsDog> dogObjectList = new LinkedList<>();
     LinkedList<clsCat> catObjectList = new LinkedList<>();
@@ -22,6 +24,7 @@ public class FrmPetManager extends javax.swing.JFrame {
         initComponents();
         this.ctlPet = new ctlPet();
         this.modeldog = new modelDog();
+        this.modelCat = new modelCat();
 
     }
 
@@ -121,6 +124,11 @@ public class FrmPetManager extends javax.swing.JFrame {
 
         btnBuscarCat.setBackground(new java.awt.Color(245, 59, 113));
         btnBuscarCat.setText("Buscar");
+        btnBuscarCat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarCatActionPerformed(evt);
+            }
+        });
 
         btnCrearCat.setBackground(new java.awt.Color(245, 59, 113));
         btnCrearCat.setText("Crear");
@@ -132,9 +140,19 @@ public class FrmPetManager extends javax.swing.JFrame {
 
         btnEliminarCat.setBackground(new java.awt.Color(245, 59, 113));
         btnEliminarCat.setText("Eliminar");
+        btnEliminarCat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarCatActionPerformed(evt);
+            }
+        });
 
         btnEditarCat.setBackground(new java.awt.Color(245, 59, 113));
         btnEditarCat.setText("Editar");
+        btnEditarCat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarCatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -557,8 +575,7 @@ public class FrmPetManager extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Llene todos los campos");
             } else {
                 clsCat cat = new clsCat(breed, code, name, born_year, color, health_status);
-                catObjectList.add(cat);
-                this.FillJlist();
+                modelCat.CreatePet(cat);
                 JOptionPane.showMessageDialog(this, "Registro guardado");
             }
         } catch(HeadlessException | NumberFormatException e) {
@@ -585,6 +602,65 @@ public class FrmPetManager extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Los datos no son validos");
         }
     }//GEN-LAST:event_btnEliminarDogActionPerformed
+
+    private void btnBuscarCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCatActionPerformed
+        String code = txtCodeCat.getText();
+        
+        clsCat cat = (clsCat) ctlPet.SearchPet(code, "Gato");
+        
+        if(cat == null){
+            JOptionPane.showMessageDialog(this, "Codigo no encontrado");
+        }else{
+            txtNameCat.setText(cat.getName());
+            txtColorCat.setText(cat.getColor());
+            txtBornYearCat.setText(Integer.toString(cat.getBorn_year()));
+            cbHealthStatusCat.setSelectedItem(cat.getHealth_Status());
+            cbBreedCat.setSelectedItem(cat.getBreed());
+        }
+    }//GEN-LAST:event_btnBuscarCatActionPerformed
+
+    private void btnEditarCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCatActionPerformed
+        try{        
+            String code = txtCodeCat.getText();
+            String name = txtNameCat.getText();
+            String color = txtColorCat.getText();
+            int born_year = Integer.parseInt(txtBornYearCat.getText());
+            String breed = cbBreedCat.getSelectedItem().toString();
+            String health_status = cbHealthStatusCat.getSelectedItem().toString();
+
+            if((code.equals("")) || (name.equals("")) || (color.equals(""))|| (breed.equals("")) || (health_status.equals(""))){
+
+                JOptionPane.showMessageDialog(null, "Ingrese todos los campos");
+
+            } else {
+                    clsCat cat = new clsCat(breed, code, name, born_year, color, health_status);
+                    modelCat.EditPet(cat);
+                    JOptionPane.showMessageDialog(null, "Su registro ha sido actualizado");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Digite un valor valido!!");
+        }
+    }//GEN-LAST:event_btnEditarCatActionPerformed
+
+    private void btnEliminarCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCatActionPerformed
+ try{
+            String code = txtCodeCat.getText();
+            if (code.equals("")){
+                JOptionPane.showMessageDialog(null, "Ingrese un codigo valido");
+            } else {
+                        boolean found = false;
+                        found = ctlPet.DeletePet(code, "Gato");
+                        this.FillJlist();
+                        clearCatFields();
+                        JOptionPane.showMessageDialog(null, "Su registro ha sido eliminado");
+                if(!found){
+                    JOptionPane.showMessageDialog(null, "No hemos encontrado el codigo");
+                }
+            }
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Los datos no son validos");
+        }
+    }//GEN-LAST:event_btnEliminarCatActionPerformed
     
     private void clearDogFields(){
         txtCodeDog.setText("");
