@@ -19,11 +19,11 @@ public class ctlPet {
      
         try{
             switch (pet.getAnimalType()){
-                case "Gato":
-                this.modelCat.CreatePet((clsCat)pet);
-                break;
                 case "Perro":
                 this.modelDog.CreatePet((clsDog)pet);
+                break;
+                case "Gato":
+                this.modelCat.CreatePet((clsCat)pet);
                 break;
             }
             return true;
@@ -48,14 +48,14 @@ public class ctlPet {
         }
     }
     
-    public boolean DeletePet(clsPet pet){
+    public boolean DeletePet(String code, String type){
         try{
-            switch (pet.getAnimalType()){
+            switch (type){
                 case "Gato":
-                this.modelCat.DeletePet((clsCat)pet);
+                this.modelCat.DeletePet(code);
                 break;
                 case "Perro":
-                this.modelDog.DeletePet((clsDog)pet);
+                this.modelDog.DeletePet(code);
                 break;
             }
             return true;

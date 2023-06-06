@@ -6,7 +6,7 @@ import interfaces.vertebrate;
 
 public class clsPet implements animal, vertebrate{
 
-    private String code;
+    String code;
     String name;
     private int born_year;
     private String color;
