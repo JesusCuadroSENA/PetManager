@@ -209,22 +209,18 @@ public class FrmPetManager extends javax.swing.JFrame {
 
         jLabel18.setBackground(new java.awt.Color(221, 221, 221));
         jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(221, 221, 221));
         jLabel18.setText("Color: ");
 
         jLabel20.setBackground(new java.awt.Color(221, 221, 221));
         jLabel20.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(221, 221, 221));
         jLabel20.setText("Code:");
 
         jLabel21.setBackground(new java.awt.Color(221, 221, 221));
         jLabel21.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(221, 221, 221));
         jLabel21.setText("Born Year: ");
 
         jLabel22.setBackground(new java.awt.Color(221, 221, 221));
         jLabel22.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(221, 221, 221));
         jLabel22.setText("Health Status: ");
 
         cbHealthStatusDog.setBackground(new java.awt.Color(255, 204, 204));
@@ -247,7 +243,6 @@ public class FrmPetManager extends javax.swing.JFrame {
 
         jLabel24.setBackground(new java.awt.Color(221, 221, 221));
         jLabel24.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(221, 221, 221));
         jLabel24.setText("Name: ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -374,32 +369,26 @@ public class FrmPetManager extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(221, 221, 221));
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(221, 221, 221));
         jLabel7.setText("Name: ");
 
         jLabel8.setBackground(new java.awt.Color(221, 221, 221));
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(221, 221, 221));
         jLabel8.setText("Color: ");
 
         jLabel9.setBackground(new java.awt.Color(221, 221, 221));
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(221, 221, 221));
         jLabel9.setText("Breed: ");
 
         jLabel10.setBackground(new java.awt.Color(221, 221, 221));
         jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(221, 221, 221));
         jLabel10.setText("Code:");
 
         jLabel11.setBackground(new java.awt.Color(221, 221, 221));
         jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(221, 221, 221));
         jLabel11.setText("Born Year: ");
 
         jLabel12.setBackground(new java.awt.Color(221, 221, 221));
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(221, 221, 221));
         jLabel12.setText("Health Status: ");
 
         btnBuscarCat.setBackground(new java.awt.Color(255, 204, 102));
@@ -459,7 +448,7 @@ public class FrmPetManager extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnBuscarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnCrearCat, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addComponent(jLabel17)
                         .addGap(26, 26, 26)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -489,7 +478,7 @@ public class FrmPetManager extends javax.swing.JFrame {
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
                                 .addComponent(cbBreedCat, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(108, 108, 108))
+                .addGap(98, 98, 98))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

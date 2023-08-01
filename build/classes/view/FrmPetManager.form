@@ -410,9 +410,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Color: "/>
               </Properties>
             </Component>
@@ -423,9 +420,6 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Code:"/>
               </Properties>
@@ -438,9 +432,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Born Year: "/>
               </Properties>
             </Component>
@@ -451,9 +442,6 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Health Status: "/>
               </Properties>
@@ -530,9 +518,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Name: "/>
               </Properties>
             </Component>
@@ -571,7 +556,7 @@
                                   <Component id="btnBuscarCat" min="-2" pref="180" max="-2" attributes="0"/>
                                   <Component id="btnCrearCat" min="-2" pref="180" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="28" max="32767" attributes="0"/>
+                              <EmptySpace pref="38" max="32767" attributes="0"/>
                               <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -611,7 +596,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="108" pref="108" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -767,9 +752,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Name: "/>
               </Properties>
             </Component>
@@ -780,9 +762,6 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Color: "/>
               </Properties>
@@ -795,9 +774,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Breed: "/>
               </Properties>
             </Component>
@@ -808,9 +784,6 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Code:"/>
               </Properties>
@@ -823,9 +796,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Born Year: "/>
               </Properties>
             </Component>
@@ -836,9 +806,6 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="dd" green="dd" red="dd" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Health Status: "/>
               </Properties>

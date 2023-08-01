@@ -5,16 +5,12 @@
             <url>src/view/FrmPetManager.java</url>
             <bookmark id="1">
                 <name/>
-                <line>771</line>
+                <line>548</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/SENA/PetManager/src/model/modelDog.java</file>
-            <file>file:/C:/Users/SENA/PetManager/src/controller/ctlPet.java</file>
-            <file>file:/C:/Users/SENA/PetManager/src/view/FrmPetManager.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
